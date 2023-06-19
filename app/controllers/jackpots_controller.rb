@@ -1,0 +1,2 @@
+class JackpotsController < ApplicationController
+end
