@@ -2,9 +2,9 @@ class DepositsController < ApplicationController
   def show
     @deposit = Deposit.find(params[:id])
   end
-  # def new
-  #   @deposit = Deposit.new
-  # end
+  def new
+    @deposit = Deposit.new
+  end
   def create
     @deposit = Deposit.new(deposit_params)
     @deposit.save
