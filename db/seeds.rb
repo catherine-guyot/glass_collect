@@ -40,8 +40,8 @@ Deposit.create(name: 'Deposit 4', address: '15 avenue de la Bourdonnais, Paris',
 Deposit.create(name: 'Deposit 5', address: '25 boulevard Pereire, Paris', total_capacity: 100, remaining_capacity: 75, status: 1, rating: 3.8,)
 Deposit.create(name: 'Deposit 6', address: '31 rue Alsace, Levallois-Perret', total_capacity: 200, remaining_capacity: 180, status: 1, rating: 3.8,)
 Deposit.create(name: 'Deposit 7', address: '20 rue Garibaldi, Lyon', total_capacity: 150, remaining_capacity: 120, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 7', address: '4 rue Dr Bouchut, Lyon', total_capacity: 100, remaining_capacity: 90, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 7', address: '70 cour Gambetta, Lyon', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
+Deposit.create(name: 'Deposit 8', address: '4 rue Dr Bouchut, Lyon', total_capacity: 100, remaining_capacity: 90, status: 1, rating: 3.8,)
+Deposit.create(name: 'Deposit 9', address: '70 cour Gambetta, Lyon', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
 
 # # Jackpots
 # Jackpot.create(value: 1000, end_date: Date.today + 7, user_id: 1)
