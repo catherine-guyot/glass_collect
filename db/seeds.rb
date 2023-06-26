@@ -23,6 +23,8 @@
 # Booking.create(user_id: 1, deposit_id: 1, date: Date.today)
 # Booking.create(user_id: 2, deposit_id: 2, date: Date.today + 1)
 
+Deposit.destroy_all
+
 # Users
 User.create(email: 'john@example.com', password: 'password', first_name: 'John', last_name: 'Doe')
 User.create(email: 'jane@example.com', password: 'password', first_name: 'Jane', last_name: 'Smith')
@@ -39,13 +41,13 @@ Deposit.create(name: 'Deposit 7', address: '4 rue Dr Bouchut, Lyon', total_capac
 Deposit.create(name: 'Deposit 7', address: '70 cour Gambetta, Lyon', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
 
 # Jackpots
-Jackpot.create(value: 1000, end_date: Date.today + 7, user_id: 1)
-Jackpot.create(value: 500, end_date: Date.today + 14, user_id: 2)
+# Jackpot.create(value: 1000, end_date: Date.today + 7, user_id: 1)
+# Jackpot.create(value: 500, end_date: Date.today + 14, user_id: 2)
 
 # Reviews
-Review.create(rating: 4, comment: 'Great deposit!', deposit_id: 1, user_id: 1)
-Review.create(rating: 3, comment: 'Average deposit.', deposit_id: 2, user_id: 2)
+# Review.create(rating: 4, comment: 'Great deposit!', deposit_id: 1, user_id: 1)
+# Review.create(rating: 3, comment: 'Average deposit.', deposit_id: 2, user_id: 2)
 
 # Bookings
-Booking.create(number_of_bottles: 10, status: 1, start_date: Date.today, end_date: Date.today + 7, user_id: 1, deposit_id: 1)
-Booking.create(number_of_bottles: 5, status: 1, start_date: Date.today + 1, end_date: Date.today + 8, user_id: 2, deposit_id: 2)
+# Booking.create(number_of_bottles: 10, status: 1, start_date: Date.today, end_date: Date.today + 7, user_id: 1, deposit_id: 1)
+# Booking.create(number_of_bottles: 5, status: 1, start_date: Date.today + 1, end_date: Date.today + 8, user_id: 2, deposit_id: 2)
