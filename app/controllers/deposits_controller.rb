@@ -1,5 +1,6 @@
 class DepositsController < ApplicationController
   def index
+
     @deposits = Deposit.all
     if params[:query].present?
       @deposits = @deposits.where("remaining_capacity > ?", params[:query])
@@ -9,9 +10,12 @@ class DepositsController < ApplicationController
     @markers = @deposits.geocoded.map do |deposit|
       {
         lat: deposit.latitude,
-        lng: deposit.longitude
+        lng: deposit.longitude,
+        info_window_html: render_to_string(partial: "info_window", locals: {deposit: deposit}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
+    @deposit = @deposits.first # Assign the first deposit to @deposit or modify this line based on your logic
   end
 
   def show
@@ -26,6 +30,13 @@ class DepositsController < ApplicationController
     @deposit = Deposit.new(deposit_params)
     @deposit.save
     redirect_to deposit_path(@deposit)
+  end
+
+
+  def destroy
+    @deposit = Deposit.find(params[:id])
+    @deposit.destroy
+    redirect_to root_path, status: :see_other
   end
 
 
