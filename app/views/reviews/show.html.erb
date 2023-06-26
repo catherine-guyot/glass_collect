@@ -1,0 +1,6 @@
+<%= simple_form_for([@deposit, @review]) do |f| %>
+  <%= f.input :content %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "Back deposits", deposits_path %>
