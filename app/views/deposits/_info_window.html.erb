@@ -1,0 +1,10 @@
+<div class="mapboxgl-popup mapboxgl-popup-content">
+  <% if deposit.present? %>
+    <p>Name: <%= deposit.name %></p>
+    <p>Address: <%= deposit.address %></p>
+  <% end %>
+
+  </div>
+    <strong><%= link_to 'Réservez pour déposer!', new_deposit_booking_path(deposit), class: 'mt-2', style: 'text-decoration: none; text-color: #096A09;' %></strong>
+  </div>
+</div>
