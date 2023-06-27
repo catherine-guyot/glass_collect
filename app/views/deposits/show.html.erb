@@ -1,1 +1,31 @@
-<h1>salut!</h1>
+<h1> IL FAUT REPRENDRE LA CARTE AVEC LE LIEU GEOCODER</h1>
+
+<%# <a href="#demo"> ouvrir la modale</a> %>
+
+<%# <div id="demo" class="modal"> %>
+  <div class="modal_content">
+
+    <h2 class= "d-flex justify-content-center" style = "font-size:23px"> <u><%= @deposit.name %> </u></h2>
+
+    <div class="text-center mt-3" style="max-width: 200px; margin: 0 auto;">
+      <p class="fs-5" style="font-size: 12px"><%= @deposit.address %></p>
+      <p class="my-3" style="font-size: 12px;"><strong><u>Total capacity</u></strong>: <%= @deposit.total_capacity %></p>
+
+      <div class="d-flex justify-content-between">
+
+        <div>
+         <strong style= "font-size: 12px"> <u>rating</u></strong> : <span class="align-self-start" style= "font-size: 12px"><%= @deposit.rating %>/10 </span>
+        </div>
+        <div>
+          <strong style= "font-size: 12px"><u>remaining capacity</u></strong>: <span style= "font-size: 12px" ><%= @deposit.remaining_capacity %>  bottles</span>
+        </div>
+
+      </div>
+        <strong><%= link_to 'Réservez pour déposer!', new_deposit_booking_path(@deposit), class: 'mt-2', style: 'text-decoration: none; text-color: #096a09;' %></strong>
+      </div>
+
+  <a href="#" class = "modal_close">&times;</a>
+
+
+  </div>
+<%# </div> %>
