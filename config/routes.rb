@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get 'dashboard', to: 'pages#dashboard'
   get '/jackpot', to: 'jackpots#show'
+  post 'jackpots/deposit', to: 'jackpots#deposit', as: 'deposit_jackpot'
 
 end
 

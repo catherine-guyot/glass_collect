@@ -59,4 +59,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)
   # end
+
+
+  def create_jackpot(user)
+    Jackpot.create!(user_id: user.id, amount: 10)
+  end
+
 end
