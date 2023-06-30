@@ -5,11 +5,10 @@ Rails.application.routes.draw do
 
   resources :deposits, only: [:create, :index, :show] do
     resources :bookings
-    resources :reviews, only: [:create, :show, :update, :destroy]
+    resources :reviews
+
   end
 
 
   get 'dashboard', to: 'pages#dashboard'
 end
-
-# delete "flats/:id", to: "flats#destroy", as: "delete_flat"
