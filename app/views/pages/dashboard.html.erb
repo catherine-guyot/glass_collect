@@ -1,1 +1,17 @@
-Dashboard
+
+
+<div class="container">
+  <h2 class= "text-success"><strong>Votre espace re-user</strong></h2>
+  <div class="booking-container">
+    <h4>Vos réservations</h4>
+
+    <% @bookings.each do |booking| %>
+      <div class="booking-card">
+        <%= image_tag "bootle_icone.png" , class: "marker"%><p>La re-use box: <%= booking.deposit.address %></p>
+        <p>attend <%= booking.number_of_bottles %> bouteilles avant le <%= booking.end_date %></p>
+        <%= button_to 'supprimer', deposit_booking_path(booking.deposit, booking.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-success ms-2 mt-2%' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+ <%# <%= button_to 'Cancel the reservation', flat_booking_path(@booking.flat, @booking.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-success ms-2 mt-2%'%>
