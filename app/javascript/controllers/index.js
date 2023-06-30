@@ -9,3 +9,9 @@ application.register("hello", HelloController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import ResetFormController from "./reset_form_controller"
+application.register("reset-form", ResetFormController)
+
+import UpdateJackpotController from "./update_jackpot_controller"
+application.register("update-jackpot", UpdateJackpotController)
