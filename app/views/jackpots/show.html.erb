@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-md-6">
+      <div class="card bg-white zoom-card">
+        <div class="card-body text-center">
+          <h1 class="card-title">Jackpot Amount</h1>
+          <div class="amount display-4">
+            $<%= @jackpot_amount %>
+          </div>
+          <a href="#" class="btn btn-primary mt-3">Claim Jackpot</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card bg-white mt-4">
+        <div class="card-body">
+          <h5 class="card-title">CO2 Footprint Calculator</h5>
+          <div class="progress mt-4">
+            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <p class="mt-2">75% of CO2 emissions</p>
+          <!-- Add the remaining content for the CO2 footprint calculator here -->
+        </div>
+      </div>
+      <div class="card bg-white mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Retail Stores</h5>
+          <ul class="list-unstyled store-list">
+            <li>
+              <img src="<%= image_path('logo.png') %>" alt="Store 1 Logo" class="store-logo">
+              <span class="store-name">Amazon</span>
+            </li>
+            <li>
+              <img src="<%= image_path('logo.png') %>" alt="Store 2 Logo" class="store-logo rounded-circle">
+              <span class="store-name">Store 2</span>
+            </li>
+            <!-- Add more retail stores as needed -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

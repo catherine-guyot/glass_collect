@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard', to: 'pages#dashboard'
+  get '/jackpot', to: 'jackpots#show'
+
 end
 
 # delete "flats/:id", to: "flats#destroy", as: "delete_flat"
