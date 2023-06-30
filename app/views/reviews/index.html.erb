@@ -19,21 +19,18 @@
 
 
         <% if @review.present? %>
-          <% @reviews.each do |review| %>
-          <% if review.deposit_id == @deposit.id%>
+          <% @deposit.reviews.each do |review| %>
             <div>
-            <% review.rating.times do %>
-            <i class = "fas fa-star"></i>
+              <% review.rating.times do %>
+              <i class = "fas fa-star " style = "color: orange"></i>
+              <% end %>
+              <%= review.comment %>
+              <%= button_to 'supprimer', deposit_review_path(review.deposit, review.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-success ms-2 mt-2%' %>
             <% end %>
-            <%= review.comment %>
-            <%= button_to 'supprimer', deposit_review_path(review.deposit, review.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-success ms-2 mt-2%' %>
-          <% end  %>
+          <% else %>
+              <p>Soyer le premier à mettre un commentaire !</p>
           <% end %>
             </div>
-        <% else %>
-            <p>Soyer le premier à mettre un commentaire !</p>
-        <% end %>
-
       <% end %>
 
 
