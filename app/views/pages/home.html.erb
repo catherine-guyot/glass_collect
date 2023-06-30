@@ -1,19 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Glass Collect</title>
-  <link rel="stylesheet" type="text/css" href="application.scss">
+  <title>Glass Collect - Récupérez et Recyclez</title>
+  <link rel="stylesheets" href="/assets/pages/home.scss">
 </head>
 <body>
-  <nav class="navbar">
-    <ul class="navbar-nav">
+  <!-- Contenu de la page -->
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container text-center">
+      <h1 class="display-4">Glass Collect</h1>
+      <p class="lead">Déposez vos bouteilles en verre et gagnez des bons d'achats !</p>
+    </div>
+  </div>
+
+  <div class="container-fluid p-3">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Comment ça fonctionne ?</h2>
+        <p>Déposez vos bouteilles dans nos dépôts partenaires et accumulez des euros dans votre cagnotte.</p>
+
+        <div class="col-md-6 d-flex flex-column justify-content-center>
+         <div class= "image-container">
+          <img src="https://res.cloudinary.com/dpng0dizn/image/upload/v1688064010/photo-1687428455_ws8iuf.jpg" alt="Image bouteille" class="img-fluid rounded">
+         </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mt-3">
+      <%= link_to "Découvrez les dépots et réservez!", deposits_path, class: "btn btn-outline-success btn-lg " %>
+      </div>
+
+      <div class="col-md-6 mt-3">
+
+        <%= link_to "je dépose", "#", class: "btn btn-outline-success btn-lg  " %>
+      </div>
+
+      <div class="col-md-6 mt-3">
+        <%= link_to "j'utilise ma cagnotte", "#", class: "btn btn-outline-success btn-lg  " %>
+      </div>
+
+      <div class = "mt-3 ">
+      <strong><%= link_to "Pourquoi ré-utiliser le verre", about_path , class: "text-success"%></strong>
+      </div>
+    </div>
 
 
-    </ul>
-  </nav>
 
-  <h1>Glass Collect</h1>
+  </div>
 
+
+
+  <!-- Inclure les balises script, les balises footer, etc. -->
 
 </body>
 </html>

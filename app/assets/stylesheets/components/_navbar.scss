@@ -1,6 +1,8 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  display: inline-block;
+  flex-grow: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +11,16 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+.button-frame {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  display: inline-block; /* Pour afficher les boutons horizontalement */
+  margin-right: 10px; /* Marge entre les boutons */
+}
+
+.button-frame {
+  margin: 10px;
 }

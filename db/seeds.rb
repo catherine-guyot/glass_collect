@@ -21,8 +21,6 @@
 # Jackpot.create(amount: 1000)
 
 # User.destroy_all
-Deposit.destroy_all
-
 
 
 # Booking.create(user_id: 1, deposit_id: 1, date: Date.today)

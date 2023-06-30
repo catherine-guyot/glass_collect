@@ -1,15 +1,22 @@
 
 <div class="container justify-content-center mt-3">
-  <h4 class="text-center">Réservez à la re-use box:</h4>
-  <h4 class="text-center"><%=@deposit.address%></h4>
-  <div class="d-flex justify-content-between mt-5">
-    <i><i class="fa-solid fa-wine-bottle fa-spin fa-sm" style="color: #096a09;"></i></i>
-    <i><i class="fa-solid fa-wine-bottle fa-spin fa-sm" style="color: #096a09;"></i></i>
-    <i><i class="fa-solid fa-wine-bottle fa-spin fa-sm" style="color: #096a09;"></i></i>
-  </div>
-  <%= simple_form_for ([@deposit, @booking]) do |f| %>
-  <%= f.input :start_date, label:"Quand voulez-vous passer ?" %>
-  <%= f.input :number_of_bottles, label: "Pour combien de bouteilles?" %>
-  <%= f.button :submit, "ok", class: "btn btn-warning" %>
-  <% end %>
+    <h4 class="text-center">Réservez à la re-use box:</h4>
+    <h4 class="text-center"><%=@deposit.address%></h4>
+    <div class="d-flex justify-content-between mt-3">
+      <%= image_tag "bootle_icone.png" , class: "marker"%>
+      <%= image_tag "bootle_icone.png" , class: "marker"%>
+      <%= image_tag "bootle_icone.png" , class: "marker"%>
+      <%= image_tag "bootle_icone.png" , class: "marker"%>
+      <%= image_tag "bootle_icone.png" , class: "marker"%>
+      <%= image_tag "bootle_icone.png" , class: "marker"%>
+    </div>
+    <div data-controller='update-jackpot' class="mt-5">
+      <%= simple_form_for ([@deposit, @booking]) do |f| %>
+      <%= f.input :start_date, label:"Quand voulez-vous passer ?" %>
+      <%= f.input :number_of_bottles, label: "Pour combien de bouteilles?", data: {update_jackpot_target: 'quantity', action: 'change ->update-jackpot#reward'} %>
+      <%= f.button :submit, "ok", class: "btn btn-warning" %>
+      <% end %>
+
+      <p class="mt-5">Bravo ! Grâce à votre dépôt, votre jackpot augmentera de <span data-update-jackpot-target='total'>0</span>€</p>
+    </div>
 </div>

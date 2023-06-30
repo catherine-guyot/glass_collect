@@ -8,6 +8,7 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @deposit = Deposit.find(params[:deposit_id])
+    @booking.user = current_user
     @booking.deposit = @deposit
     @booking.end_date = @booking.start_date + 24.hours
     @booking.status = 0
@@ -18,6 +19,11 @@ class BookingsController < ApplicationController
     # end
   end
 
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to dashboard_path, status: :see_other
+  end
 
   private
 
