@@ -1,10 +1,35 @@
-<div class="mapboxgl-popup mapboxgl-popup-content">
+<%# <div class="mapboxgl-popup mapboxgl-popup-content "> %>
   <% if deposit.present? %>
-    <p>Name: <%= deposit.name %></p>
-    <p>Address: <%= deposit.address %></p>
+
+    <h3> <u> <%= deposit.name %> </u></h3> <br>
+
+
+      <p style="font-size: 14px"><%= deposit.address %></p>
+
+
+      <%# <div> %>
+        <%# <strong style="font-size: 12px;"><u>Total capacity</u></strong>: <%= deposit.total_capacity %>
+      <%# </div> %>
+
+      <div>
+         <strong style= "font-size: 12px"> <u>Note</u></strong> : <span class="align-self-start" style= "font-size: 12px"><% deposit.rating.to_i.times do %>
+         <i class = "fas fa-star $yellow"></i>
+         <% end %></span>
+      </div>
+
+
+      <div>
+        <strong style= "font-size: 12px"><u>Capacité restante </u>: </strong> <span style= "font-size: 12px" ><%= deposit.remaining_capacity %>  bottles</span>
+      </div>
+
+      <div class ="div-btn-popup">
+        <strong class = "m-2" ><%= link_to 'Avis', deposit_reviews_path(deposit), class: ' btn btn-popup' %></strong>
+        <strong class = "m-2"><%= link_to 'Réservez !', new_deposit_booking_path(deposit), class: ' btn btn-popup ' %></strong>
+      </div>
+<%# , style: 'text-decoration: none; text-color: #096a09; font-size: 10px;' %>
+<%# , style: 'text-decoration: none; text-color: #096a09; font-size: 10px;' %>
+
   <% end %>
 
-  </div>
-    <strong><%= link_to 'Réservez pour déposer!', class: 'mt-2', style: 'text-decoration: none; text-color: #096A09;' %></strong>
-  </div>
-</div>
+<%#
+</div> %>
