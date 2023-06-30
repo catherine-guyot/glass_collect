@@ -1,19 +1,31 @@
 class DepositsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
+
   def index
 
     @deposits = Deposit.all
-    if params[:query].present?
-      @deposits = @deposits.where("remaining_capacity > ?", params[:query])
-    else
-      "Oups, aucune re-use box ne peut absorber #{params[:query]} bouteilles"
-    end
     @markers = @deposits.geocoded.map do |deposit|
       {
         lat: deposit.latitude,
         lng: deposit.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: {deposit: deposit}),
+        info_window_html: render_to_string(partial: "info_window", locals: { deposit: deposit }),
         marker_html: render_to_string(partial: "marker")
       }
+    end
+    if params[:query].present?
+      @deposits = @deposits.where("remaining_capacity > ?", params[:query])
+      if @deposits
+        @markers = @deposits.geocoded.map do |deposit|
+          {
+            lat: deposit.latitude,
+            lng: deposit.longitude,
+            info_window_html: render_to_string(partial: "info_window", locals: { deposit: deposit }),
+            marker_html: render_to_string(partial: "marker")
+          }
+        end
+      else
+        @markers = []
+      end
     end
     @deposit = @deposits.first # Assign the first deposit to @deposit or modify this line based on your logic
   end

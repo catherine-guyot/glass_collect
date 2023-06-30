@@ -5,6 +5,6 @@ export default class extends Controller {
   connect(){
   }
   reset() {
-    this.formTargett.reset();
+    this.formTarget.reset();
   }
 }

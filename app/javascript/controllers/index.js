@@ -15,3 +15,6 @@ application.register("reset-form", ResetFormController)
 
 import StarRatingController from "./star_rating_controller"
 application.register("star-rating", StarRatingController)
+
+import UpdateJackpotController from "./update_jackpot_controller"
+application.register("update-jackpot", UpdateJackpotController)

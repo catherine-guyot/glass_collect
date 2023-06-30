@@ -3,7 +3,16 @@
     <%= link_to "#", class: "navbar-brand" do %>
       <%= image_tag "https://res.cloudinary.com/dpng0dizn/image/upload/v1687801165/Logo_kszcm7.png" %>
     <% end %>
+    <div class="button-container d-flex justify-content-center">
+      <div class="button-frame">
+        <%= link_to "Découvrez les dépots et réservez!", "#", class: "nav-link" %>
+      </div>
+      <div class="button-frame">
+        <%= link_to "Je suis ma réservation et je l'honore!", "#", class: "nav-link" %>
+      </div>
+    </div>
 
+      </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -26,7 +35,8 @@
             </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Mon espace re-user", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Nouveau re-user?", new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
