@@ -8,11 +8,10 @@ class ReviewsController < ApplicationController
 
   end
 
-  def show
-    @deposit = Deposit.find(params[:deposit_id])
-    @review = @deposit.reviews.find(params[:id])
-
-  end
+  # def show
+  #   @review = Review.find(params[:id])
+  #   @deposit = @review.deposit
+  # end
 
   def create
     @deposit = Deposit.find(params[:deposit_id])
