@@ -1,3 +1,4 @@
+<%# <script src="app/javascript/controllers/update_jackpot_controller.js"></script> %>
 
 <div class="container justify-content-center mt-3">
     <h4 class="text-center">Réservez à la re-use box:</h4>
@@ -12,11 +13,11 @@
     </div>
     <div data-controller='update-jackpot' class="mt-5">
       <%= simple_form_for ([@deposit, @booking]) do |f| %>
-      <%= f.input :start_date, label:"Quand voulez-vous passer ?" %>
-      <%= f.input :number_of_bottles, label: "Pour combien de bouteilles?", data: {update_jackpot_target: 'quantity', action: 'change ->update-jackpot#reward'} %>
+      <%= f.input :start_date, label: "Quand voulez-vous passer ?"%>
+      <%= f.number_field :number_of_bottles, label: "Pour combien de bouteilles?", data: {update_jackpot_target: "quantity", action: "change->update-jackpot#reward"} %>
       <%= f.button :submit, "ok", class: "btn btn-warning" %>
       <% end %>
 
-      <p class="mt-5">Bravo ! Grâce à votre dépôt, votre jackpot augmentera de <span data-update-jackpot-target='total'>0</span>€</p>
+      <p class="mt-5">Bravo ! Grâce à votre dépôt, votre jackpot augmentera de : <span data-update-jackpot-target="total"></span>€</p>
     </div>
 </div>
