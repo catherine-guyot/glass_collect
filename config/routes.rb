@@ -6,9 +6,7 @@ Rails.application.routes.draw do
   resources :deposits, only: [:create, :index, :show] do
     resources :bookings
     resources :reviews, shallow: true
-
   end
-
 
   get 'dashboard', to: 'pages#dashboard'
   get 'about', to: 'pages#about'
