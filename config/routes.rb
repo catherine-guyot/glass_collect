@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :deposits, only: [:create, :index, :show] do
     resources :bookings
-    resources :reviews
+    resources :reviews, shallow: true
 
   end
 
