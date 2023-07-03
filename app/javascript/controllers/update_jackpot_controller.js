@@ -9,8 +9,8 @@ export default class extends Controller {
   }
 
   reward() {
-    const quantity = parseInt(this.quantityTarget);
-    const total = quantity * 0.5
-    this.totalTarger.textContent = total
+    const quantity = parseInt(this.quantityTarget.value);
+    const total = quantity * (1/2);
+    this.totalTarget.innerText = total
   }
 }
