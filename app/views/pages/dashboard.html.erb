@@ -10,6 +10,7 @@
         <%= image_tag "bootle_icone.png" , class: "marker"%><p>La re-use box: <%= booking.deposit.address %></p>
         <p>attend <%= booking.number_of_bottles %> bouteilles avant le <%= booking.end_date %></p>
         <%= button_to 'je dépose' %>
+        <p> Montant de la récompense sur le deposit <%= booking.number_of_bottles * 0.5 %>€</p>
         <%= button_to 'supprimer', deposit_booking_path(booking.deposit, booking.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-success ms-2 mt-2%' %>
       </div>
     <% end %>

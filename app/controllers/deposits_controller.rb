@@ -19,9 +19,9 @@ class DepositsController < ApplicationController
     @deposit = @deposits.first # Assign the first deposit to @deposit or modify this line based on your logic
   end
 
-  def show
-    @deposit = Deposit.find(params[:id])
-  end
+  # def show
+  #   @deposit = Deposit.find(params[:id])
+  # end
 
   def new
     @deposit = Deposit.new
