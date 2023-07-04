@@ -21,7 +21,7 @@ class BookingsController < ApplicationController
 
   def update
     @booking = Booking.find(params[:id])
-    @booking.
+
   end
 
   def destroy
