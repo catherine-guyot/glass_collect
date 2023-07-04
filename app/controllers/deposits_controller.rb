@@ -9,14 +9,17 @@ class DepositsController < ApplicationController
       @deposits = @deposits.near(params[:query_address], 1)
     end
     @markers = @deposits.geocoded.map do |deposit|
+      average = deposit.reviews.average(:rating)
       {
         lat: deposit.latitude,
         lng: deposit.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { deposit: deposit }),
+        info_window_html: render_to_string(partial: "info_window", locals: { deposit: deposit, average: average }),
         marker_html: render_to_string(partial: "marker")
       }
     end
     @deposit = @deposits.first # Assign the first deposit to @deposit or modify this line based on your logic
+
+
   end
 
   # def show

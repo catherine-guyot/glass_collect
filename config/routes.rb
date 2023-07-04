@@ -7,7 +7,13 @@ Rails.application.routes.draw do
     resources :bookings
     resources :reviews, shallow: true
   end
+  resource :jackpot, only: [:show]
 
   get 'dashboard', to: 'pages#dashboard'
   get 'about', to: 'pages#about'
+
 end
+
+  # ressources :users do
+  #   ressources :jackpot, only:[:show]
+  # end

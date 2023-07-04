@@ -12,9 +12,11 @@
       <%# </div> %>
 
       <div>
-         <strong style= "font-size: 12px"> <u>Note</u></strong> : <span class="align-self-start" style= "font-size: 12px"><% deposit.rating.to_i.times do %>
-         <i class = "fas fa-star $yellow"></i>
-         <% end %></span>
+         <strong style= "font-size: 12px"> <u>Note</u></strong> : <span class="align-self-start" style= "font-size: 12px">
+         <% average.to_i.times do %>
+         <i class = "fas fa-star" style = "color: orange"></i>
+         <% end%>
+         </span>
       </div>
 
 
