@@ -25,7 +25,7 @@
                   <i class = "fas fa-star " style = "color: orange"></i>
                 <% end %>
                 <%= review.comment %>
-                <%= link_to 'supprimer', review_path(review.id), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: 'btn btn-outline-success ms-2 mt-2%' %>
+                <%= link_to 'supprimer', review_path(review.id), data: {turbo_method: :delete, turbo_confirm: "Vous confirmez?"}, class: 'btn btn-outline-success ms-2 mt-2%' %>
               </div>
             <% end %>
         <% else %>

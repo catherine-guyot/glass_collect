@@ -1,5 +1,5 @@
 <div class="container">
-  <h3>Trouvez votre re-use box</h3>
+  <h3 class="text-success"><strong>Trouvez le dépôt le plus proche de vous !</strong></h3>
   <div class="row">
     <div class="col-12">
         <% if @markers == [] %>
@@ -14,7 +14,7 @@
     </div>
   </div>
   <form class="d-flex my-2 my-lg-0" >
-          <input class="form-control me-1" name="query_address" type="search" placeholder="Où voulez-vous déposer des bouteilles ?" aria-label="Search" value="<%= params[:query_address] %>">
+          <input class="form-control me-1" name="query_address" type="search" placeholder="Près d'où ? adresse, ville " aria-label="Search" value="<%= params[:query_address] %>">
           <input class="form-control me-1" name="query_number" type="search" placeholder="Pour combien de bouteilles?" aria-label="Search" value="<%= params[:query_number] %>">
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit" >ok</button>
   </form>
