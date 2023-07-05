@@ -18,8 +18,6 @@ class DepositsController < ApplicationController
       }
     end
     @deposit = @deposits.first # Assign the first deposit to @deposit or modify this line based on your logic
-
-
   end
 
   # def show

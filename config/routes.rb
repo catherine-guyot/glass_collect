@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   resource :jackpot, only: [:show]
 
+  patch "jackpots/:id", to: "jackpots#update", as: "update_jackpot"
   patch "bookings/:id", to: "bookings#update", as: "update_booking"
   delete "bookings/:id", to: "bookings#destroy", as: "delete_booking"
   get 'dashboard', to: 'pages#dashboard'

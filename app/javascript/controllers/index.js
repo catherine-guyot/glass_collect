@@ -13,9 +13,6 @@ application.register("hello", HelloController)
 import MapController from "./map_controller"
 application.register("map", MapController)
 
-import ResetFormController from "./reset_form_controller"
-application.register("reset-form", ResetFormController)
-
 import StarRatingController from "./star_rating_controller"
 application.register("star-rating", StarRatingController)
 
