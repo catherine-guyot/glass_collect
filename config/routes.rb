@@ -7,9 +7,15 @@ Rails.application.routes.draw do
     resources :bookings, only: [:show, :new, :create]
     resources :reviews, shallow: true
   end
+  resource :jackpot, only: [:show]
 
   patch "bookings/:id", to: "bookings#update", as: "update_booking"
   delete "bookings/:id", to: "bookings#destroy", as: "delete_booking"
   get 'dashboard', to: 'pages#dashboard'
   get 'about', to: 'pages#about'
+
 end
+
+  # ressources :users do
+  #   ressources :jackpot, only:[:show]
+  # end
