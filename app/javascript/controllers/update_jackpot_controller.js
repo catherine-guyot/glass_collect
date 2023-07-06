@@ -15,7 +15,7 @@ export default class extends Controller {
   }
 
   updateTotal() {
-  // console.log(this.quantityTarget.value)
+  console.log(this.quantityTarget.value)
   const quantity = parseInt(this.quantityTarget.value,10);
   // console.log(typeof quantity);
   if (quantity >= 0) {

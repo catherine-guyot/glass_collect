@@ -12,16 +12,13 @@
       <%= image_tag "bootle_icone.png" , class: "marker"%>
       <%= image_tag "bootle_icone.png" , class: "marker"%>
     </div>
-    <div data-controller='update-jackpot' data-controller='control-quantity' class="mt-5">
+    <div data-controller='update-jackpot' class="mt-5">
       <div data-controller='control-quantity'>
           <%= simple_form_for ([@deposit, @booking]) do |f| %>
           <%= f.input :start_date, as: :date, order: [:day, :month, :year], label: "Quand voulez-vous passer ?"%>
-          <%= f.number_field :number_of_bottles, label: "Pour combien de bouteilles?", data: {update_jackpot_target: "quantity", action: "keyup->update-jackpot#reward"} %>
+          <%= f.input :number_of_bottles, input_html: {min: 1, max: @deposit.remaining_capacity, value: 1, data: {update_jackpot_target: "quantity", action: "keyup->update-jackpot#reward"}}, label: "Combien de bouteilles?"%>
           <%= f.button :submit, "ok", class: "btn btn-warning" %>
           <% end %>
-        <div class="d-none" data-control-quantity-target="content">
-          <p>Attention! la place disponible dans ce dépôt est insuffisante pour vous!</p>
-        </div>
       </div>
         <div class="mt-5 text-center bg-lg">
           <p >Top !</p>
@@ -34,6 +31,6 @@
 </div>
 
 
-<%# data: {control_quantity_target: "number", action: "keyup->control-quantity#compare"} %>
 
-<%# class="animate__animated animate__heartbeat" %>
+<%# input_html: {min: 1, max: @deposit.remaining_capacity, value: 1,} %>
+<%# as: :range, prompt: "my data", collection: 1..@deposit.remaining_capacity, %>
