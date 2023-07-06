@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ['number','content']
 
   connect() {
-    console.log(this.numberTarget)
+    // console.log(this.numberTarget)
   }
 
   // compare() {
