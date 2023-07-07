@@ -5,6 +5,21 @@ class BookingsController < ApplicationController
     @booking = Booking.new
   end
 
+
+  # def create
+  #   @booking = Booking.new(booking_params)
+  #   @deposit = Deposit.find(params[:deposit_id])
+  #   @booking.user = current_user
+  #   @booking.deposit = @deposit
+  #   @booking.end_date = @booking.start_date + 24.hours
+  #   @booking.status = 0
+  #   @booking.save
+  #   redirect_to dashboard_path
+  #   # else
+  #   #   render :new, status: unprocessable_entity
+  #   # end
+  # end
+
   def create
     @booking = Booking.new(booking_params)
     @deposit = Deposit.find(params[:deposit_id])
@@ -12,12 +27,20 @@ class BookingsController < ApplicationController
     @booking.deposit = @deposit
     @booking.end_date = @booking.start_date + 24.hours
     @booking.status = 0
-    @booking.save
-    redirect_to dashboard_path
-    # else
-    #   render :new, status: unprocessable_entity
-    # end
+
+    if @booking.save
+      # Calculate the jackpot reward
+      jackpot_reward = @booking.number_of_bottles * 0.5
+
+      # Create the jackpot
+      @jackpot = Jackpot.create(amount: jackpot_reward)
+
+      redirect_to dashboard_path
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
+
 
   def destroy
     @booking = Booking.find(params[:id])
