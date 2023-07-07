@@ -7,7 +7,7 @@ class PagesController < ApplicationController
   def dashboard
     @bookings = current_user.bookings
   end
+
   def about
   end
-  
 end

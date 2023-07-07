@@ -16,23 +16,21 @@
         <div class = "mb-5">
           <%= f.button :submit, value:"valider le commentaire", class:"btn-success btn-validation"%>
         </div>
-
-
-        <% if @review.present? %>
-          <% @deposit.reviews.each do |review| %>
-            <div>
-              <% review.rating.times do %>
-              <i class = "fas fa-star " style = "color: orange"></i>
-              <% end %>
-              <%= review.comment %>
-              <%= button_to 'supprimer', deposit_review_path(review.deposit, review.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-success ms-2 mt-2%' %>
-            <% end %>
-          <% else %>
-              <p>Soyer le premier à mettre un commentaire !</p>
-          <% end %>
-            </div>
       <% end %>
 
+        <% if @review.present? %>
+            <% @deposit.reviews.each do |review| %>
+              <div>
+                <% review.rating.times do %>
+                  <i class = "fas fa-star " style = "color: orange"></i>
+                <% end %>
+                <%= review.comment %>
+                <%= link_to 'supprimer', review_path(review.id), data: {turbo_method: :delete, turbo_confirm: "Vous confirmez?"}, class: 'btn btn-outline-success ms-2 mt-2%' %>
+              </div>
+            <% end %>
+        <% else %>
+              <p>Soyer le premier à mettre un commentaire !</p>
+        <% end %>
 
 
     </div>

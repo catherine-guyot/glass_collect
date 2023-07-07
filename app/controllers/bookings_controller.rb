@@ -12,15 +12,30 @@ class BookingsController < ApplicationController
     @booking.deposit = @deposit
     @booking.end_date = @booking.start_date + 24.hours
     @booking.status = 0
+    if @booking.save
+      @deposit.remaining_capacity = @deposit.remaining_capacity - @booking.number_of_bottles
+      @deposit.save
+      redirect_to dashboard_path
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.status = 1
+    current_user.jackpot.value = current_user.jackpot.value + (@booking.number_of_bottles * 0.5)
+    current_user.jackpot.end_date = @booking.end_date + 6.month
     @booking.save
+    current_user.jackpot.save
     redirect_to dashboard_path
-    # else
-    #   render :new, status: unprocessable_entity
-    # end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
+    @deposit = @booking.deposit
+    @deposit.remaining_capacity = @deposit.remaining_capacity + @booking.number_of_bottles
+    @deposit.save
     @booking.destroy
     redirect_to dashboard_path, status: :see_other
   end

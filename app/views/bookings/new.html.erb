@@ -1,7 +1,9 @@
+<%# <script src="app/javascript/controllers/update_jackpot_controller.js"></script> %>
 
 <div class="container justify-content-center mt-3">
-    <h4 class="text-center">Réservez à la re-use box:</h4>
-    <h4 class="text-center"><%=@deposit.address%></h4>
+    <h4 class="text-center text-success"><u>Réservez au dépôt:</u></h4>
+    <h4 class="text-center mt-4"><%=@deposit.address%></h4>
+
     <div class="d-flex justify-content-between mt-3">
       <%= image_tag "bootle_icone.png" , class: "marker"%>
       <%= image_tag "bootle_icone.png" , class: "marker"%>
@@ -11,12 +13,24 @@
       <%= image_tag "bootle_icone.png" , class: "marker"%>
     </div>
     <div data-controller='update-jackpot' class="mt-5">
-      <%= simple_form_for ([@deposit, @booking]) do |f| %>
-      <%= f.input :start_date, label:"Quand voulez-vous passer ?" %>
-      <%= f.input :number_of_bottles, label: "Pour combien de bouteilles?", data: {update_jackpot_target: 'quantity', action: 'change ->update-jackpot#reward'} %>
-      <%= f.button :submit, "ok", class: "btn btn-warning" %>
-      <% end %>
-
-      <p class="mt-5">Bravo ! Grâce à votre dépôt, votre jackpot augmentera de <span data-update-jackpot-target='total'>0</span>€</p>
+      <div data-controller='control-quantity'>
+          <%= simple_form_for ([@deposit, @booking]) do |f| %>
+          <%= f.input :start_date, as: :date, order: [:day, :month, :year], label: "Quand voulez-vous passer ?"%>
+          <%= f.input :number_of_bottles, input_html: {min: 1, max: @deposit.remaining_capacity, value: 1, data: {update_jackpot_target: "quantity", action: "keyup->update-jackpot#reward"}}, label: "Combien de bouteilles?"%>
+          <%= f.button :submit, "ok", class: "btn btn-warning" %>
+          <% end %>
+      </div>
+        <div class="mt-5 text-center bg-lg">
+          <p >Top !</p>
+          <p>Grâce à votre dépôt, votre cagnotte va augmenter de : <span data-update-jackpot-target="total">0</span>€</p>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+      <%= link_to "je cherche un autre dépôt!", deposits_path, class: "btn btn-outline-success"%>
     </div>
 </div>
+
+
+
+<%# input_html: {min: 1, max: @deposit.remaining_capacity, value: 1,} %>
+<%# as: :range, prompt: "my data", collection: 1..@deposit.remaining_capacity, %>

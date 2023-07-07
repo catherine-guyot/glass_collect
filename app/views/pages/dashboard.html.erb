@@ -1,17 +1,20 @@
 
 
 <div class="container">
-  <h2 class= "text-success"><strong>Votre espace re-user</strong></h2>
+  <h2 class= "text-success"><strong>Bonjour <%= current_user.first_name %></strong></h2>
   <div class="booking-container">
-    <h4>Vos réservations</h4>
+    <h4>Voici vos réservations en cours</h4>
 
     <% @bookings.each do |booking| %>
-      <div class="booking-card">
-        <%= image_tag "bootle_icone.png" , class: "marker"%><p>La re-use box: <%= booking.deposit.address %></p>
-        <p>attend <%= booking.number_of_bottles %> bouteilles avant le <%= booking.end_date %></p>
-        <%= button_to 'supprimer', deposit_booking_path(booking.deposit, booking.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-success ms-2 mt-2%' %>
-      </div>
+      <% if booking.status == "pending" %>
+        <div class="booking-card">
+          <%= image_tag "bootle_icone.png" , class: "marker"%><p>Le dépôt: <%= booking.deposit.address %></p>
+          <p>attend <%= booking.number_of_bottles %> bouteilles avant le <%= booking.end_date %></p>
+          <p> Cela augmentera votre cagnotte de <%= booking.number_of_bottles * 0.5 %>€</p>
+          <%= link_to 'je dépose', update_booking_path(booking.id), data: {turbo_method: :patch}, class: 'btn btn-outline-success ms-2 mt-2'%>
+          <%= link_to 'supprimer', delete_booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Vous confirmez?"} , class: 'btn btn-outline-primary ms-2 mt-2'%>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
- <%# <%= button_to 'Cancel the reservation', flat_booking_path(@booking.flat, @booking.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-success ms-2 mt-2%'%>
