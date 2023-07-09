@@ -1,3 +1,8 @@
+@media (max-width: 900px) {
+  .container {
+    width: 650px;
+  }
+}
 /* Style du conteneur principal */
 .container {
   max-width: 100%;
@@ -6,7 +11,7 @@
 }
 
 /* Style du titre */
-h1 {
+h2 {
   font-size: 20px;
   margin-bottom: 10px;
 }
@@ -15,16 +20,6 @@ h1 {
 p {
   font-size: 16px;
   line-height: 1.5;
-}
-
-/* Style des liens */
-a {
-  color: #0099ff;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
 }
 
 /* Style de l'image */
@@ -36,7 +31,7 @@ img {
 
 /* Style des sections */
 .section {
-  margin-bottom: 20px;
+  margin-bottom: 200px;
 }
 
 .section-title {
