@@ -1,3 +1,15 @@
-<h2><%= current_user.first_name %>, voici votre cagnotte</h1>
+<div class="container marker_cover">
+  <h2>Bravo, <%= current_user.first_name %>,</h1>
 
-<p>Le montant total s'élève à ce jour à <%= @jackpot.value %>€ !</p>
+  <p>Tu as gagné <%= @jackpot.value %>€ !</p>
+
+
+  <p>Tu peux te faire un cadeau jusqu'au <%= @jackpot.end_date %></p>
+  <%# <div>
+  <%= icon('fa-duotone', 'fa-piggy-bank') %>
+  <%# <p><i class="fa-duotone fa-piggy-bank"></i></p>
+  <i class="fa-duotone fa-piggy-bank" style="--fa-primary-color: #096a09; --fa-secondary-color: #ff8000;"></i>
+  <i class="fa-duotone fa-piggy-bank" style="--fa-primary-color: #ff8c00; --fa-secondary-color: #099609;"></i>
+  <i class="fa-duotone fa-piggy-bank fa-flip" style="--fa-primary-color: #ff8c00; --fa-secondary-color: #099609;"></i>
+  </div>  %>
+</div>
