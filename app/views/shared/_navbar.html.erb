@@ -1,38 +1,44 @@
-<div class=" navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to "#", class: "navbar-brand" do %>
-      <%= image_tag "https://res.cloudinary.com/dpng0dizn/image/upload/v1687801165/Logo_kszcm7.png" %>
-    <% end %>
-    <%# <div class="button-container d-flex justify-content-center">
-      <div class="button-frame">
-        <%= link_to "Découvrez les dépots et réservez!", "#", class: "nav-link" %>
-      <%# </div>
-      <div class="button-frame">
-        <%= link_to "Je suis ma réservation et je l'honore!", "#", class: "nav-link" %>
-      <%# </div>
-    </div> %>
-
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon fixed-bottom">
+  <div class="container-fluid justify-content-center" >
+    <div class="d-flex justify-content-between">
+      <div class="col-md-6 mt-2">
+        <%= link_to root_path, class: "btn btn-outline-success btn-lg" do %>
+          <i class="fa-solid fa-house"></i>
+        <% end %>
       </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
+      <div class="col-md-6 mt-2">
+        <%= link_to deposits_path, class: "btn btn-outline-success btn-lg" do %>
+          <i class="fa-solid fa-map-location-dot"></i>
+        <% end %>
+      </div>
+      <div class="col-md-6 mt-2">
+        <%= link_to dashboard_path, class: "btn btn-outline-success btn-lg" do %>
+          <i class="fa-solid fa-basket-shopping"></i>
+        <% end %>
+      </div>
+      <div class="col-md-6 mt-2">
+        <%= link_to jackpot_path, class: "btn btn-outline-success btn-lg" do %>
+          <i class="fa-solid fa-piggy-bank"></i>
+        <% end %>
+      </div>
+      <div class="col-md-6 mt-2">
+        <button class="btn btn-outline-success btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa-solid fa-user"></i>
+        </button>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+      <ul class="navbar-nav">
         <% if user_signed_in? %>
-            <li class="nav-item active">
-              <%= link_to "HOME", root_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item dropdown">
-              <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <li class="nav-item dropdown">
+            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <%= image_tag "https://res.cloudinary.com/dpng0dizn/image/upload/v1686133653/logo-personne-removebg-preview_dbl9bc.png", class: "avatar", alt: "dropdown menu" %>
-              </a>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+            </a>
+            <div class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
               <%= link_to "Mon espace", dashboard_path, class: "dropdown-item" %>
-
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-              </div>
-            </li>
+              <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            </div>
+          </li>
         <% else %>
           <li class="nav-item">
             <%= link_to "Connexion", new_user_session_path, class: "nav-link" %>
