@@ -4,9 +4,6 @@
 
 import { application } from "./application"
 
-import ControlQuantityController from "./control_quantity_controller"
-application.register("control-quantity", ControlQuantityController)
-
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
