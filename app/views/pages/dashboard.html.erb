@@ -9,7 +9,7 @@
       <% if booking.status == "pending" %>
         <div class="booking-card">
           <%= image_tag "bootle_icone.png" , class: "marker"%><p>Le dépôt: <%= booking.deposit.address %></p>
-          <p>attend <%= booking.number_of_bottles %> bouteilles avant le <%= booking.end_date %></p>
+          <p>attend <%= booking.number_of_bottles %> bouteilles avant le <%= booking.end_date.strftime('%d-%m-%Y') %></p>
           <p> Cela augmentera votre cagnotte de <%= booking.number_of_bottles * 0.5 %>€</p>
           <%= link_to 'je dépose', update_booking_path(booking.id), data: {turbo_method: :patch}, class: 'btn btn-outline-success ms-2 mt-2'%>
           <%= link_to 'supprimer', delete_booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Vous confirmez?"} , class: 'btn btn-outline-primary ms-2 mt-2'%>
