@@ -38,3 +38,20 @@
   padding-top:21px;
   margin: 0 auto;
 }
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  background: url("cu_vert.png");
+  background-size: cover;
+  cursor: pointer;
+
+}
+.custom-range::-moz-range-thumb {
+  width: 32px;
+  height: 32px;
+  background: url("cu_vert.png");
+  background-size: cover;
+  cursor: pointer;
+}
