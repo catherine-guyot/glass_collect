@@ -16,10 +16,6 @@
 
 }
 
-
-
-
-
 .btn-popup:hover {
   text-decoration: none;
   background-color: $success;
@@ -29,4 +25,16 @@
 .div-btn-popup{
   margin-top: 10px;
   align-items: flex-end;
+}
+
+.btn-jackpot{
+  border-radius: 50%;
+  font-size: 27px;
+  width: 80px;
+  height: 80px;
+  background-color:orange ;
+  color: white;
+  text-align: center;
+  padding-top:21px;
+  margin: 0 auto;
 }

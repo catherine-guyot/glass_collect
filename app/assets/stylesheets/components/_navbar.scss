@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background:#f0f6f6;
   display: inline-block;
   flex-grow: 0;
 }
@@ -23,4 +23,7 @@
 
 .button-frame {
   margin: 10px;
+}
+.navbar .btn {
+  margin-right: 10px; /* Ajustez la valeur selon votre préférence */
 }
