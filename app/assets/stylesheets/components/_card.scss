@@ -6,7 +6,7 @@ margin: 5px;
 
 .logo-link {
   text-decoration: none;
-  color: #096A09;
+  color: black;
 }
 
 
@@ -14,8 +14,23 @@ margin: 5px;
   background: url("cratebottle.jpg");
   background-size: cover;
   background-position: center;
-
-
 }
 
 
+.card-jackpot{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background: url("cratebottle11.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  margin-top: 4px;
+ }
+
+ .card-partenaire{
+  color:black;
+  background-color:#76a72e;
+  border-radius: 4px;
+  margin-top: 3px;
+ }
