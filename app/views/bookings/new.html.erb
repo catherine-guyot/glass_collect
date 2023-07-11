@@ -18,7 +18,6 @@
           <%= f.input :number_of_bottles, input_html: {min: 1, max: @deposit.remaining_capacity, value: 1, data: {update_jackpot_target: "quantity", action: "keyup->update-jackpot#reward"}}, label: "Combien de bouteilles?"%>
           <%= f.button :submit, "ok", class: "btn btn-warning" %>
           <% end %>
-      </div>
         <div class="mt-5 text-center bg-lg">
           <p >Top !</p>
           <p>Grâce à votre dépôt, votre cagnotte va augmenter de : <span data-update-jackpot-target="total">0</span>€</p>
@@ -28,6 +27,3 @@
       <%= link_to "je cherche un autre dépôt!", deposits_path, class: "btn btn-outline-success"%>
     </div>
 </div>
-
-
-
