@@ -2,11 +2,16 @@ class DepositsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-
     @deposits = Deposit.all
-    if params[:query_number].present? && params[:query_address].present?
-      @deposits = @deposits.where("remaining_capacity > ?", params[:query_number])
-      @deposits = @deposits.near(params[:query_address], 1)
+    # params[:search][:address]
+    # query_number = params[:search][:query_number]
+    if params[:search] && params[:search][:address].present?
+      @deposits = @deposits.near(params[:search][:address], 1)
+    # if params[:search][:query_number].present? && params[:search][:address].present?
+      # @deposits = @deposits.where("remaining_capacity > ?", params[:search][:query_number])
+    end
+    if params[:search] && params[:search][:query_number].present?
+      @deposits = @deposits.where("remaining_capacity > ?", params[:search][:query_number])
     end
     @markers = @deposits.geocoded.map do |deposit|
       average = deposit.reviews.average(:rating)

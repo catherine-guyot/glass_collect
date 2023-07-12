@@ -24,10 +24,32 @@
   font-size: 18px;
   border-radius: 4px;
   padding : 4px;
-
 }
+
 .textbookingreservation{
   font-size: 18px;
+}
 
+.titledashboard{
+  color: white;
+  font-weight: 900;
+  font-size: 30px;
+  border-radius: 50px;
+  border:solid;
+  border-color: white;
+  height: 60px;
+  padding-top: 5px;
+}
 
+.titledashboard2{
+  color: $success;
+  font-weight: 900;
+  font-size: 20px;
+  border-radius: 50px;
+  border:solid;
+  border-color: $success;
+  height: 50px;
+  width: 80px;
+  padding-top: 8px;
+  text-align: center;
 }
