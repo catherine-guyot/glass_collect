@@ -30,14 +30,9 @@
     <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <% if user_signed_in? %>
-          <li class="nav-item dropdown">
-            <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              <%= image_tag "https://res.cloudinary.com/dpng0dizn/image/upload/v1686133653/logo-personne-removebg-preview_dbl9bc.png", class: "avatar", alt: "dropdown menu" %>
-            </a>
-            <div class="dropdown-menu dropdown-menu-start" aria-labelledby="navbarDropdown">
-              <%= link_to "Mon espace", dashboard_path, class: "dropdown-item" %>
-              <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
+          <li class="nav-item">
+              <%= link_to "Mon espace", dashboard_path, class: "nav-link"%>
+              <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link"%>
           </li>
         <% else %>
           <li class="nav-item">

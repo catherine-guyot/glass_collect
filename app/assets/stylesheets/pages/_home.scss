@@ -1,10 +1,4 @@
 // Specific CSS for your home-page
-.banner {
-  background-color: green;
-  padding: 10px;
-  text-align: center;
-}
-
 .logo {
   position: relative;
   display: inline-block;
@@ -15,5 +9,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  max-height: 50px; /* Ajustez la taille de l'image selon vos besoins */
+  max-height: 50px;
+}
+.green-bg {
+  background-color: #84c186;
 }
