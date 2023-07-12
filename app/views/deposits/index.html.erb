@@ -1,11 +1,11 @@
 <div class="container">
-  <h3 class="text-success"><strong>Trouve le dépôt le plus proche !</strong></h3>
+  <h3 class="text-success mt-2"><strong>Trouve le dépôt le plus proche !</strong></h3>
   <div class="row">
     <div class="col-12">
         <% if @markers == [] %>
             <p class= "text-success"><strong>"Oups, aucun dépôt ne peut absorber tant de bouteilles !"</strong></p>
         <% else %>
-      <div style="width: 100%; height: 500px;"
+      <div style="width: 100%; height:400px" class="mt-2"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
@@ -13,10 +13,12 @@
         <% end %>
     </div>
   </div>
-  <p class="text-success">Précise ton adresse & la quantité de bouteilles à déposer</p>
-  <form class="d-flex my-2 my-lg-0" >
-          <input class="form-control me-1" name="query_address" type="search" placeholder="adresse, ville ?" aria-label="Search" value="<%= params[:query_address] %>">
-          <input class="form-control me-1" name="query_number" type="search" placeholder="Qté ?" aria-label="Search" value="<%= params[:query_number] %>">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ok</button>
-  </form>
-</div>
+  <p class="text-success mt-1">A préciser</p>
+    <%= simple_form_for(:search, url: deposits_path, method: "get")  do |f| %>
+      <%= f.input :address, label: "Ton adresse?", input_html: {data: {address_autocomplete_target: "address"}, class: "d-none"},
+          wrapper_html: {data: {controller: "address-autocomplete", address_autocomplete_api_key_value: ENV["MAPBOX_API_KEY"]}} %>
+      <%= f.input :query_number, label: "Quantité de bouteilles à déposer?" %>
+      <%= f.button :submit, value: "ok", class:"btn-success"%>
+    <% end %>
+  </div>
+<%# style="width: 100%; height: 00px" class="mt-2" %>

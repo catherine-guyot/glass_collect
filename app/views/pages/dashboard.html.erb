@@ -1,13 +1,25 @@
-<div class="container">
-  <h2 class="text-success"><strong>Bonjour <%= current_user.first_name %></strong></h2>
-  <div class="booking-container">
-    <h4>Voici vos réservations en cours</h4>
+<div class="container justify-content-center card-photo">
 
+  <h1 class="titledashboard text-center my-5"><strong>Salut <%= current_user.first_name.capitalize %></strong></h1>
+
+  <div class="card-dashboard">
+    <p>A ce jour, dans ta cagnotte</p>
+    <h2 class= "titledashboard2 mx-auto"> <%= @jackpot.value %>€</h2>
+    <div class="d-flex justify-content-between p-2">
+      <p>Dépose tes bouteilles, ca va bouger!</p>
+      <%= link_to jackpot_path do %>
+            <i class="fa-solid fa-piggy-bank"></i>
+          <% end %>
+    </div>
+  </div>
+  <div class="booking-container mt-4">
+    <%# <h4 class= "text-center text-black">Des réservations en cours ?</h4> %>
     <% @bookings.each do |booking| %>
-      <% if booking.status == "pending" %>
-        <div class="booking-card card mb-3 bg-white">
+      <% if booking.status == "pending"%>
+        <%# <div class="booking-card card mb-3 bg-white"> %>
+        <div class="booking-card">
           <div class="row g-0">
-            <div class="col-md-2 col-3">
+            <div class="col-md-1 col-3">
               <div class="image-wrapper">
                 <%= image_tag "bootle_icone.png", class: "marker", alt: "Booking Image" %>
               </div>
@@ -16,20 +28,17 @@
               <div class="card-body">
                 <p class="card-text">📍 Le dépôt: <%= booking.deposit.address %></p>
                 <p class="card-text">🔜 Attend <%= booking.number_of_bottles %> bouteilles avant le <%= booking.end_date %></p>
-                <p class="card-text">💰 Cela augmentera votre cagnotte de <%= booking.number_of_bottles * 0.5 %>€</p>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                  <%= link_to 'je dépose', update_booking_path(booking.id), data: {turbo_method: :patch}, class: 'btn btn-outline-success me-md-2 mb-2'%>
-                  <%= link_to 'supprimer', delete_booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Vous confirmez?"}, class: 'btn btn-outline-primary mb-2'%>
+                <p class="card-text">💰 Cela augmentera ta cagnotte de <%= booking.number_of_bottles * 0.5 %>€</p>
+                <%# <div class="d-grid gap-2 d-md-flex justify-content-md-start"> %>
+                <div class="d-grid gap-2 d-flex justify-content-between">
+                  <%= link_to 'je dépose', update_booking_path(booking.id), data: {turbo_method: :patch, turbo_confirm: "Bien joué, merci pour ton dépôt!"}, class: 'btn btn-outline-success me-md-2 mb-2'%>
+                  <%= link_to 'supprimer', delete_booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Tu confirmes?"}, class: 'btn btn-outline-primary mb-2'%>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       <% end %>
-
     <% end %>
-
   </div>
-
 </div>

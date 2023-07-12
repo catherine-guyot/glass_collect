@@ -6,9 +6,8 @@ margin: 5px;
 
 .logo-link {
   text-decoration: none;
-  color: #096A09;
+  color: black;
 }
-
 
 .banner-booking {
   height: 100%;
@@ -22,11 +21,66 @@ margin: 5px;
   width: 100%;
   height: 100%;
   z-index: -1;
-
-
-
-
 }
+
+.card-jackpot{
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  background: url("cratebottle11.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 4px;
+  margin-top: 4px;
+  padding-top: 3px;
+ }
+
+ .card-partenaire{
+  color:black;
+  background-color:#a1c56c;
+  border-radius: 4px;
+  margin-top: 3px;
+  padding-top: 3px;
+ }
+
+ .card-dashboard{
+  background-color: white;
+  background-size: cover;
+  border-radius: 4px;
+  color: $success;
+  font-size: 15px;
+  margin-top: 4px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+ }
+
+ .booking-card{
+  margin-bottom: 3px;
+  background-color:white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 1px 1px $success;
+  padding-top: 3px;
+  padding-right: 3px;
+ }
+
+.card-photo{
+  background: url("cratebottle10.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+}
+
+.card-photo-review{
+  background:url("machine_consigne.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  font-size: larger;
+  font-weight: bold;
+}
+
+
 html, body {
   height: 100%;
 }
