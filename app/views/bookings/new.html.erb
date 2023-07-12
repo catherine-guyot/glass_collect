@@ -5,21 +5,21 @@
 
 
 
-<div class="container justify-content-center  banner-booking">
-  <p class="text-center titlebookingh1 mt-3">Réservez au dépôt:</p>
-  <h3 class="text-center mt-4 titlebookingh3"><%=@deposit.address%></h3>
+<div class="justify-content-center  banner-booking pt-1">
+  <h1 class="text-center titlebookingh1 mt-5 ">Réservez au dépôt:</h1>
+  <h3 class="text-center titlebookingh3 mt-5"><%=@deposit.address%></h3>
 
-  <div class="d-flex justify-content-between mt-3 ">
-      <%= image_tag "bootle_icone.png" , class: "marker"%>
-      <%= image_tag "bootle_icone.png" , class: "marker"%>
-      <%= image_tag "bootle_icone.png" , class: "marker"%>
-      <%= image_tag "bootle_icone.png" , class: "marker"%>
-      <%= image_tag "bootle_icone.png" , class: "marker"%>
-      <%= image_tag "bootle_icone.png" , class: "marker"%>
-  </div>
+  <%# <div class="d-flex justify-content-between  "> %>
+     <%# <%= image_tag "bootle_icone.png" , class: "marker"%>
+     <%# <%= image_tag "bootle_icone.png" , class: "marker"%>
+     <%# <%= image_tag "bootle_icone.png" , class: "marker"%>
+     <%# <%= image_tag "bootle_icone.png" , class: "marker"%>
+     <%# <%= image_tag "bootle_icone.png" , class: "marker"%>
+     <%# <%= image_tag "bootle_icone.png" , class: "marker"%>
+  <%# </div> %>
 
 
-  <div data-controller='update-jackpot' class="mt-5 textbookingform">
+  <div data-controller='update-jackpot' class=" textbookingform">
     <%= simple_form_for ([@deposit, @booking]) do |f| %>
       <%= f.input :start_date, as: :date, order: [:day, :month, :year], label: "Quand voulez-vous passer ?"%>
       <div class = "d-flex align-item">
@@ -34,13 +34,13 @@
 
         <%= f.button :submit, "ok", class: "btn btn-warning" %>
         <% end %>
-    <div class="mt-2 text-center bg-lg textbookingreservation banner-booking-jackpot">
+    <div class="mt-2 text-center bg-lg textbookingreservation banner-booking-jackpot mb-4">
       <p >Top !</p>
       <p>Grâce à votre dépôt, votre cagnotte va augmenter de : <span data-update-jackpot-target="total">0</span>€</p>
     </div>
   </div>
   <div class="text-center mt-4">
-    <%= link_to "je cherche un autre dépôt!", deposits_path, class: "btn btn-success shadow rounded"%>
+    <%= link_to "je cherche un autre dépôt!", deposits_path, class: "btn btn-success shadow rounded mt-4 mb-5"%>
   </div>
 
 </div>
