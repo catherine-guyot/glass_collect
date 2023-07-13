@@ -32,12 +32,12 @@
 }
 
 .titledashboard{
-  color: white;
+  color: #cdf557;
   font-weight: 900;
   font-size: 30px;
   border-radius: 50px;
   border:solid;
-  border-color: white;
+  border-color: #cdf557;
   height: 60px;
   padding-top: 5px;
 }
@@ -46,11 +46,11 @@
   color: $success;
   font-weight: 900;
   font-size: 20px;
-  border-radius: 50px;
-  border:solid;
-  border-color: $success;
+  border-radius: 50%;
+  // border:solid;
+  // border-color: $success;
   height: 50px;
-  width: 80px;
+  width: 50px;
   padding-top: 8px;
   text-align: center;
 }

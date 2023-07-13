@@ -1,12 +1,19 @@
-<div class="container justify-content-center card-photo">
+<div class="container justify-content-center card-photo-dashboard">
 
   <h1 class="titledashboard text-center my-5"><strong>Salut <%= current_user.first_name.capitalize %></strong></h1>
 
   <div class="card-dashboard">
-    <p>A ce jour, dans ta cagnotte</p>
-    <h2 class= "titledashboard2 mx-auto"> <%= @jackpot.value %>€</h2>
-    <div class="d-flex justify-content-between p-2">
-      <p>Dépose tes bouteilles, ca va bouger!</p>
+    <%# <div class="d-flex justify-content-between pt-2"> %>
+      <p>A ce jour</p>
+
+      <p class= "btn-dashboard mx-auto"> <%= @jackpot.quantity %></p>
+    <%# </div> %>
+      <p>bouteilles déposées</p>
+      <p class= "btn-dashboard mx-auto"> <%= @jackpot.value %>€</p>
+      <p>dans ta cagnotte</p>
+
+    <div class="d-flex p-2 text-success">
+      <p class="me-2">Dépose, ca va encore bouger!</p>
       <%= link_to jackpot_path do %>
             <i class="fa-solid fa-piggy-bank"></i>
           <% end %>

@@ -26,7 +26,7 @@ class BookingsController < ApplicationController
     @booking.status = 1
     current_user.jackpot.value = current_user.jackpot.value + (@booking.number_of_bottles * 0.5)
     current_user.jackpot.end_date = @booking.end_date + 3.month
-    # current_user.booking.number_of_bottles = current_user.booking.number_of_bottles + @booking.number_of_bottles
+    current_user.jackpot.quantity = current_user.jackpot.quantity + @booking.number_of_bottles
     @booking.save
     current_user.jackpot.save
     @deposit = @booking.deposit
