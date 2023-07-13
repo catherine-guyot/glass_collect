@@ -29,7 +29,8 @@ class BookingsController < ApplicationController
     current_user.jackpot.quantity = current_user.jackpot.quantity + @booking.number_of_bottles
     @booking.save
     current_user.jackpot.save
-    redirect_to dashboard_path
+    @deposit = @booking.deposit
+    redirect_to deposit_reviews_path(@deposit)
   end
 
   def destroy
