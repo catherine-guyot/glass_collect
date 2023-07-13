@@ -39,6 +39,23 @@
   margin: 0 auto;
 }
 
+.btn-dashboard{
+  border-radius: 50%;
+  font-size: 27px;
+  width: 80px;
+  height: 80px;
+  background:orange ;
+  color: white;
+  text-align: center;
+  padding-top:21px;
+  margin: 0 auto;
+  transition: background 0.3s ease;
+}
+
+.btn-dashboard:hover {
+  background: #f8f42e;
+  color: $success;
+}
 .custom-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -47,8 +64,8 @@
   background: url("cu_vert.png");
   background-size: cover;
   cursor: pointer;
-
 }
+
 .custom-range::-moz-range-thumb {
   width: 32px;
   height: 32px;

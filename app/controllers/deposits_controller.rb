@@ -5,14 +5,13 @@ class DepositsController < ApplicationController
     @deposits = Deposit.all
     # params[:search][:address]
     # query_number = params[:search][:query_number]
-    if params[:search] && params[:search][:address].present?
+    if params[:search] && params[:search][:address].present? && params[:search][:query_number].present?
       @deposits = @deposits.near(params[:search][:address], 1)
-    # if params[:search][:query_number].present? && params[:search][:address].present?
-      # @deposits = @deposits.where("remaining_capacity > ?", params[:search][:query_number])
-    end
-    if params[:search] && params[:search][:query_number].present?
       @deposits = @deposits.where("remaining_capacity > ?", params[:search][:query_number])
     end
+    # if params[:search] && params[:search][:query_number].present?
+    #   @deposits = @deposits.where("remaining_capacity > ?", params[:search][:query_number])
+    # end
     @markers = @deposits.geocoded.map do |deposit|
       average = deposit.reviews.average(:rating)
       {
