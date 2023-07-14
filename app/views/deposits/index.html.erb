@@ -5,7 +5,7 @@
         <% if @markers == [] %>
             <p class= "text-success"><strong>"Oups, aucun dépôt ne correspond à ta recherche !"</strong></p>
         <% else %>
-      <div style="width: 100%; height:400px"
+      <div style="width: 100%; height:420px"
         data-controller="map"
         data-map-markers-value="<%= @markers.to_json %>"
         data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">

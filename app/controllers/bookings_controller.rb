@@ -30,6 +30,7 @@ class BookingsController < ApplicationController
     @booking.save
     current_user.jackpot.save
     @deposit = @booking.deposit
+    flash[:notice] = "Bien joué, merci pour la planète!"
     redirect_to deposit_reviews_path(@deposit)
   end
 
