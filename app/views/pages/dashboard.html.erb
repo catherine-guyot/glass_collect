@@ -1,6 +1,6 @@
-<div class="container justify-content-center card-photo-dashboard">
+<div class="container card-photo-dashboard">
 
-  <h1 class="titledashboard text-center my-5"><strong>Salut <%= current_user.first_name.capitalize %></strong></h1>
+  <h1 class="titledashboard text-center my-3"><strong>Salut <%= current_user.first_name.capitalize %></strong></h1>
 
   <div class="card-dashboard">
     <%# <div class="d-flex justify-content-between pt-2"> %>
@@ -19,7 +19,7 @@
           <% end %>
     </div>
   </div>
-  <div class="booking-container mt-4">
+  <div class="booking-container mt-2">
     <%# <h4 class= "text-center text-black">Des réservations en cours ?</h4> %>
     <% @bookings.each do |booking| %>
       <% if booking.status == "pending"%>

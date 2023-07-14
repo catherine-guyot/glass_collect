@@ -16,3 +16,10 @@
 @import "pages/about";
 @import "pages/home";
 @import "components/navbar";
+
+// body, .container{
+//   min-height: 1100px;
+// }
+.container{
+  padding-bottom: 80px !important;
+}
