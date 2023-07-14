@@ -33,28 +33,21 @@ Deposit.destroy_all
 # User.create(email: 'jane@example.com', password: 'password', first_name: 'Jane', last_name: 'Smith')
 
 # # Deposits
-Deposit.create(name: 'Deposit Suffren', address: '25 avenue de Suffren, Paris', total_capacity: 100, remaining_capacity: 0, status: 0, rating: 4.5,)
-Deposit.create(name: 'Deposit Joffre', address: '4 place Joffre, Paris', total_capacity: 200, remaining_capacity: 200, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 3', address: '30 avenue Bosquet, Paris', total_capacity: 150, remaining_capacity: 75, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 4', address: '15 avenue de la Bourdonnais, Paris', total_capacity: 350, remaining_capacity: 200, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 5', address: '25 boulevard Pereire, Paris', total_capacity: 100, remaining_capacity: 75, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 6', address: '31 rue Alsace, Levallois-Perret', total_capacity: 200, remaining_capacity: 180, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 7', address: '20 rue Garibaldi, Lyon', total_capacity: 150, remaining_capacity: 120, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 8', address: '4 rue Dr Bouchut, Lyon', total_capacity: 100, remaining_capacity: 90, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 9', address: '70 cour Gambetta, Lyon', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 10', address: '37 rue Gabriel Péri, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 11', address: '77 rue Louise Michel, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 12', address: '70 r Prés Wilson, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
-Deposit.create(name: 'Deposit 13', address: 'port Debilly, 75116 Paris', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
-
-# Jackpots
-# Jackpot.create(value: 1000, end_date: Date.today + 7, user_id: 1)
-# Jackpot.create(value: 500, end_date: Date.today + 14, user_id: 2)
-
-# Reviews
-# Review.create(rating: 4, comment: 'Great deposit!', deposit_id: 1, user_id: 1)
-# Review.create(rating: 3, comment: 'Average deposit.', deposit_id: 2, user_id: 2)
-
-# Bookings
-# Booking.create(number_of_bottles: 10, status: 1, start_date: Date.today, end_date: Date.today + 7, user_id: 1, deposit_id: 1)
-# Booking.create(number_of_bottles: 5, status: 1, start_date: Date.today + 1, end_date: Date.today + 8, user_id: 2, deposit_id: 2)
+Deposit.create(name: 'Deposit Suffren', address: '25 avenue de Suffren, Paris', total_capacity: 50, remaining_capacity: 0, status: 0)
+Deposit.create(name: 'Deposit Joffre', address: '4 place Joffre, Paris', total_capacity: 50, remaining_capacity: 40, status: 1)
+Deposit.create(name: 'Deposit Bosquet', address: '30 avenue Bosquet, Paris', total_capacity: 50, remaining_capacity: 50, status: 1)
+Deposit.create(name: 'Deposit Bourdon', address: '15 avenue de la Bourdonnais, Paris', total_capacity: 50, remaining_capacity: 36, status: 1,)
+Deposit.create(name: 'Deposit Pereire', address: '25 boulevard Pereire, Paris', total_capacity: 40, remaining_capacity: 40, status: 1,)
+Deposit.create(name: 'Deposit Alsace', address: '31 rue Alsace, Levallois-Perret', total_capacity: 50, remaining_capacity: 30, status: 1,)
+Deposit.create(name: 'Deposit Garibal', address: '150 rue Garibaldi, Lyon', total_capacity: 50, remaining_capacity: 30, status: 1,)
+Deposit.create(name: 'Deposit Bouchut', address: '8 rue Dr Bouchut, Lyon', total_capacity: 50, remaining_capacity: 50, status: 1, )
+Deposit.create(name: 'Deposit Servient', address: '80 rue Servient, Lyon', total_capacity: 50, remaining_capacity: 28, status: 1, )
+Deposit.create(name: 'Deposit Peri', address: '37 rue Gabriel Péri, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 30, status: 1,)
+Deposit.create(name: 'Deposit Louise M', address: '77 rue Louise Michel, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 75, status: 1, )
+Deposit.create(name: 'Deposit Wilson', address: '70 r Prés Wilson, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 50, status: 1, )
+Deposit.create(name: 'Deposit Liberté', address: '250 rue de la Liberté, Lille', total_capacity: 50, remaining_capacity: 50, status: 1,)
+Deposit.create(name: 'Deposit Temple', address: '4 place du Temple, Lille', total_capacity: 50, remaining_capacity: 40, status: 1,)
+Deposit.create(name: 'Deposit Sauveur', address: '51 rue Saint-Sauveur, Lille', total_capacity: 50, remaining_capacity: 50, status: 1,)
+Deposit.create(name: 'Deposit Cardinet', address: '158 rue Cardinet, Paris', total_capacity: 50, remaining_capacity: 50, status: 1,)
+Deposit.create(name: 'Deposit Moine', address: '47 rue des Moines, Paris', total_capacity: 50, remaining_capacity: 30, status: 1,)
+Deposit.create(name: 'Deposit Legendre', address: '90 rue Legendre, Paris', total_capacity: 50, remaining_capacity: 40, status: 1,)

@@ -38,7 +38,7 @@
                 <p class="card-text">💰 Cela augmentera ta cagnotte de <%= booking.number_of_bottles * 0.5 %>€</p>
                 <%# <div class="d-grid gap-2 d-md-flex justify-content-md-start"> %>
                 <div class="d-grid gap-2 d-flex justify-content-between">
-                  <%= link_to 'Je dépose', update_booking_path(booking.id), data: {turbo_method: :patch, turbo_confirm: "Bien joué, merci pour ton dépôt!  " }, class: 'btn btn-success me-md-2 mb-2'%>
+                  <%= link_to 'Je dépose', update_booking_path(booking.id), data: {turbo_method: :patch, turbo_confirm: "Bien joué, merci pour la planète!" }, class: 'btn btn-success me-md-2 mb-2'%>
                   <%= link_to 'supprimer', delete_booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Tu confirmes?"}, class: 'btn btn-outline-success me-4 mb-2'%>
                 </div>
               </div>
@@ -49,6 +49,3 @@
     <% end %>
   </div>
 </div>
-
-
-<%# turbo_confirm: "Bien joué, merci pour ton dépôt!  " %>
