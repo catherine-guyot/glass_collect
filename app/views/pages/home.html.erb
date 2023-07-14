@@ -5,25 +5,39 @@
   <title>Glass Collect - Récupérez et Recyclez</title>
 </head>
 <body>
+<div class="logo">
+  <img src="https://res.cloudinary.com/dpng0dizn/image/upload/v1689329653/GLASS_COLLECT_4_w0oma2.png" alt="Image logo" >
+<%# <%= image_tag "/assets/images/cratebottle.jpg", class:"logo"%>
+<%# <img class= "logo" src="app/assets/images/cratebottle.png" alt="Bouteille"> %>
+</div>
 
-  <div class="jumbotron jumbotron-fluid bg-success">
-    <div class="text-center green-bg">
-      <h1 class="display-4">Glass Collect</h1>
-      <p class="lead">Déposez vos bouteilles en verre sans les casser et gagnez des bons d'achat !</p>
+  <%# <div class="jumbotron jumbotron-fluid bg-info ms-4 mt-4">
+   <div class="bg-info ms-4 mt-4">
+    <div class="text-center info-bg">
+      <%# <h1 class="display-4">Glass Collect</h1> %>
+      <%# <p class="lead">Déposez vos bouteilles en verre sans les casser et gagnez des bons d'achat !</p>
     </div>
-  </div>
+  </div> %>
 
-  <div class="container-fluid p-3 text-center">
+  <div class="container-fluid bg-info bg-gradient p-3 text-success text-center">
     <div class="row">
       <div class="col-md-6">
-        <h2>Comment ça fonctionne ?</h2>
-        <p>Déposez vos bouteilles dans nos dépôts partenaires et accumulez des euros dans votre cagnotte.</p>
-
+        <%# <h2>Comment ça fonctionne ?</h2> %>
+        <h1><strong>Ne casse plus tes bouteilles!</strong></h1>
         <div class="col-md-6 d-flex flex-column justify-content-center">
           <div class="image-container">
             <img src="https://res.cloudinary.com/dpng0dizn/image/upload/v1688064010/photo-1687428455_ws8iuf.jpg" alt="Image bouteille" class="img-fluid rounded">
           </div>
         </div>
+        <h1>Dépose tes bouteilles dans nos dépôts</h1>
+
+        <h1> & accumule des euros dans ta cagnotte.</h1>
+        <br>
+        <br>
+        <br>
+
+
+
       </div>
       <div class="mt-3">
         <strong><%= link_to "Pourquoi ré-utiliser le verre", about_path , class: "text-success"%></strong>
