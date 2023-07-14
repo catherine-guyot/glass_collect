@@ -5,8 +5,8 @@
   <h1 class="text-success text-center mt-3"><strong>Bravo <%= current_user.first_name.capitalize %>,</strong></h1>
   <div class="card-jackpot">
     <% if @jackpot.value > 0 %>
-    <h2><strong>Tu as dans ta cagnotte</strong></p>
-    <h2 class= "btn-jackpot"><%= @jackpot.value %>€</h2>
+    <h2><strong>Tu as dans ta cagnotte</strong></h2>
+    <p class= "btn-jackpot align-middle"><%= @jackpot.value %>€</p>
     <p>Tu peux les utiliser jusqu'au <mark><%= @jackpot.end_date.strftime('%d-%m-%Y') %></mark></p>
     <% else %>
     <p>Vite dépose tes bouteilles dans les dépôts Glass Collect pour réutiliser le verre et gagner des euros!</p>

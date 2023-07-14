@@ -4,7 +4,7 @@
 
   <div class="card-dashboard">
     <%# <div class="d-flex justify-content-between pt-2"> %>
-      <p>A ce jour</p>
+      <h2>A ce jour</h2>
 
       <p class= "btn-dashboard mx-auto"> <%= @jackpot.quantity %></p>
     <%# </div> %>
@@ -12,15 +12,15 @@
       <p class= "btn-dashboard mx-auto"> <%= @jackpot.value %>€</p>
       <p>dans ta cagnotte</p>
 
-    <div class="d-flex p-2 text-success">
-      <p class="me-2">Dépose, ca va encore bouger!</p>
+    <div class="d-flex mt-2 ps-4 text-success text-center">
+      <h2 class="me-2">Dépose, ca va encore bouger!</h2>
       <%= link_to jackpot_path do %>
             <i class="fa-solid fa-piggy-bank"></i>
           <% end %>
     </div>
   </div>
   <div class="booking-container mt-2">
-    <%# <h4 class= "text-center text-black">Des réservations en cours ?</h4> %>
+    <h4 class= "text-center text-info">Des réservations en cours ?</h4>
     <% @bookings.each do |booking| %>
       <% if booking.status == "pending"%>
         <%# <div class="booking-card card mb-3 bg-white"> %>

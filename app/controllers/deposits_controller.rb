@@ -13,7 +13,7 @@ class DepositsController < ApplicationController
       @deposits = @deposits.where("remaining_capacity > ?", params[:search][:query_number])
     end
     if params[:search] && params[:search][:query_number] == "" && params[:search][:address].present?
-      @deposits = @deposits.near(params[:search][:address], 1)
+      @deposits = @deposits.near(params[:search][:address])
     end
 
     @markers = @deposits.geocoded.map do |deposit|

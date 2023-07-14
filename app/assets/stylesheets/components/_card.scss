@@ -27,7 +27,7 @@ margin: 5px;
   color: white;
   font-weight: bold;
   text-align: center;
-  background: url("cratebottle11.jpg");
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("cratebottle11.jpg");
   background-size: cover;
   background-position: center;
   border-radius: 4px;
@@ -37,14 +37,14 @@ margin: 5px;
 
  .card-partenaire{
   color:black;
-  background-color:#a1c56c;
+  background-color: $yellow;
   border-radius: 4px;
   margin-top: 3px;
   padding-top: 3px;
  }
 
  .card-dashboard{
-  background-color: #cdf557;
+  background-color: $yellow;
   background-size: cover;
   border-radius: 4px;
   color: $success;
@@ -52,7 +52,7 @@ margin: 5px;
   margin-top: 2px;
   text-align: center;
   padding-top: 3px;
-  padding-bottom: 3px;
+  padding-bottom: 1px;
  }
 
  .booking-card{
@@ -64,7 +64,7 @@ margin: 5px;
   padding-right: 3px;
  }
 
- 
+
 .card-photo-dashboard{
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("cratebottle10.jpg");
   background-size: cover;
