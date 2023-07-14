@@ -17,9 +17,9 @@
 @import "pages/home";
 @import "components/navbar";
 
-// body, .container{
-//   min-height: 1100px;
-// }
-.container{
-  padding-bottom: 10px !important;
+body, .container{
+  min-height: 1100px;
 }
+// .container{
+//   padding-bottom: 10px !important;
+// }

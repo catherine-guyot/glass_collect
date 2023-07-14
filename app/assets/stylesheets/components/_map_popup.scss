@@ -1,8 +1,5 @@
 .mapboxgl-popup {
   // max-width: 250px;
-
-
-
 }
 
 .mapboxgl-popup-content {
@@ -13,12 +10,8 @@
   overflow: auto;
   font-size: 14px;
   flex-direction: column;
-  background:#B0E0E6;
+  background: $yellow;
   border-radius: 1.25rem;
   border: 0.1rem solid;
   border-color: $success;
-
-
-
 }
-// linear-gradient(90deg, rgb(1, 163, 155) 0%, rgb(80, 155, 134) 35%, rgb(0, 255, 187) 100%);

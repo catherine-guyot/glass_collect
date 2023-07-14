@@ -6,8 +6,8 @@
 
 
 <div class="justify-content-center  banner-booking pt-1">
-  <h1 class="text-center titlebookingh1 mt-5 ">Réservez au dépôt:</h1>
-  <h3 class="text-center titlebookingh3 mt-5"><%=@deposit.address%></h3>
+  <h1 class="text-center titlebookingh1 mt-5 ">Réserve au dépôt :</h1>
+  <h2 class="text-center titlebookingh3 mt-5"><%=@deposit.address%></h2>
 
   <%# <div class="d-flex justify-content-between  "> %>
      <%# <%= image_tag "bootle_icone.png" , class: "marker"%>
@@ -32,15 +32,15 @@
           function updateTextInput(val) { document.getElementById('textInput').value=val; }
         </script> %>
 
-        <%= f.button :submit, "ok", class: "btn btn-warning" %>
+        <%= f.button :submit, "Réserve!", class: "btn btn-success" %>
         <% end %>
     <div class="mt-2 text-center bg-lg textbookingreservation banner-booking-jackpot mb-4">
-      <p >Top !</p>
-      <p>Grâce à votre dépôt, votre cagnotte va augmenter de : <span data-update-jackpot-target="total">0</span>€</p>
+      <p > </p>
+      <p>Grâce à ton dépôt, ta cagnotte va augmenter de : <span data-update-jackpot-target="total">0</span>€</p>
     </div>
   </div>
   <div class="text-center mt-4">
-    <%= link_to "je cherche un autre dépôt!", deposits_path, class: "btn btn-success shadow rounded mt-4 mb-5"%>
+    <%= link_to "Je cherche un autre dépôt!", deposits_path, class: "btn btn-success shadow rounded mt-4 mb-5"%>
   </div>
 
 </div>
