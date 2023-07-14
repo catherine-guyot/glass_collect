@@ -33,8 +33,8 @@ Deposit.destroy_all
 # User.create(email: 'jane@example.com', password: 'password', first_name: 'Jane', last_name: 'Smith')
 
 # # Deposits
-Deposit.create(name: 'Deposit 1', address: '25 avenue de Suffren, Paris', total_capacity: 100, remaining_capacity: 0, status: 0, rating: 4.5,)
-Deposit.create(name: 'Deposit 2', address: '4 place Joffre, Paris', total_capacity: 200, remaining_capacity: 200, status: 1, rating: 3.8,)
+Deposit.create(name: 'Deposit Suffren', address: '25 avenue de Suffren, Paris', total_capacity: 100, remaining_capacity: 0, status: 0, rating: 4.5,)
+Deposit.create(name: 'Deposit Joffre', address: '4 place Joffre, Paris', total_capacity: 200, remaining_capacity: 200, status: 1, rating: 3.8,)
 Deposit.create(name: 'Deposit 3', address: '30 avenue Bosquet, Paris', total_capacity: 150, remaining_capacity: 75, status: 1, rating: 3.8,)
 Deposit.create(name: 'Deposit 4', address: '15 avenue de la Bourdonnais, Paris', total_capacity: 350, remaining_capacity: 200, status: 1, rating: 3.8,)
 Deposit.create(name: 'Deposit 5', address: '25 boulevard Pereire, Paris', total_capacity: 100, remaining_capacity: 75, status: 1, rating: 3.8,)
@@ -42,6 +42,10 @@ Deposit.create(name: 'Deposit 6', address: '31 rue Alsace, Levallois-Perret', to
 Deposit.create(name: 'Deposit 7', address: '20 rue Garibaldi, Lyon', total_capacity: 150, remaining_capacity: 120, status: 1, rating: 3.8,)
 Deposit.create(name: 'Deposit 8', address: '4 rue Dr Bouchut, Lyon', total_capacity: 100, remaining_capacity: 90, status: 1, rating: 3.8,)
 Deposit.create(name: 'Deposit 9', address: '70 cour Gambetta, Lyon', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
+Deposit.create(name: 'Deposit 10', address: '37 rue Gabriel Péri, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
+Deposit.create(name: 'Deposit 11', address: '77 rue Louise Michel, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
+Deposit.create(name: 'Deposit 12', address: '70 r Prés Wilson, 92300 Levallois Perret', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
+Deposit.create(name: 'Deposit 13', address: 'port Debilly, 75116 Paris', total_capacity: 75, remaining_capacity: 120, status: 1, rating: 3.8,)
 
 # Jackpots
 # Jackpot.create(value: 1000, end_date: Date.today + 7, user_id: 1)
