@@ -3,15 +3,20 @@
   height: 130px;
   width:100%;
   background-color: $green;
-  margin-bottom: 10px;
   text-align: center;
 }
-
-.logo img {
+.logo-image{
+  background: url("https://res.cloudinary.com/dpng0dizn/image/upload/v1689351713/GLASS_COLLECT_6_tuojbk.png");
+  background-size: cover;
   height: 130px;
   width: 130px;
 
 }
+// .logo img {
+//   height: 130px;
+//   width: 130px;
+
+// }
 
 .green-bg {
   background-color: #84c186;
@@ -22,4 +27,14 @@
   height: 100vh; /* Utilise 100% de la hauteur de la fenêtre */
   padding-right: 0;
   padding-left: 0;
+
+}
+.home-background{
+  background: url("https://res.cloudinary.com/dpng0dizn/image/upload/v1688064010/photo-1687428455_ws8iuf.jpg");
+}
+.card-home{
+  margin-top: 200px;
+  background-color: $green;
+  opacity: 0.75;
+  border-radius: 4px;
 }
