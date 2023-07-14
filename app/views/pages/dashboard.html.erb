@@ -4,18 +4,18 @@
 
   <div class="card-dashboard">
     <%# <div class="d-flex justify-content-between pt-2"> %>
-      <h2>A ce jour</h2>
+      <h3>Actuellement</h3>
 
       <p class= "btn-dashboard mx-auto"> <%= @jackpot.quantity %></p>
     <%# </div> %>
-      <p>bouteilles déposées</p>
+      <p>Bouteilles déposées</p>
       <p class= "btn-dashboard mx-auto"> <%= @jackpot.value %>€</p>
-      <p>dans ta cagnotte</p>
+      <p>Dans ta cagnotte</p>
 
     <div class="d-flex mt-2 ps-4 text-success text-center">
-      <h2 class="me-2">Dépose, ca va encore bouger!</h2>
+      <h3 class="ms-2 me-2"><strong>Dépose, ca va encore bouger !</strong></h3>
       <%= link_to jackpot_path do %>
-            <i class="fa-solid fa-piggy-bank"></i>
+        <i class="fa-solid fa-piggy-bank" style="color: #09670b;"></i>
           <% end %>
     </div>
   </div>
@@ -38,11 +38,8 @@
                 <p class="card-text">💰 Cela augmentera ta cagnotte de <%= booking.number_of_bottles * 0.5 %>€</p>
                 <%# <div class="d-grid gap-2 d-md-flex justify-content-md-start"> %>
                 <div class="d-grid gap-2 d-flex justify-content-between">
-                  <%= link_to 'je dépose', update_booking_path(booking.id), data: {turbo_method: :patch }, class: 'btn btn-outline-success me-md-2 mb-2'%>
-                  <% if flash[:notice] %>
-                    <div class="notice"><%= flash[:notice] %></div>
-                  <% end %>
-                  <%= link_to 'supprimer', delete_booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Tu confirmes?"}, class: 'btn btn-outline-primary mb-2'%>
+                  <%= link_to 'Je dépose', update_booking_path(booking.id), data: {turbo_method: :patch, turbo_confirm: "Bien joué, merci pour ton dépôt!  " }, class: 'btn btn-success me-md-2 mb-2'%>
+                  <%= link_to 'supprimer', delete_booking_path(booking.id), data: {turbo_method: :delete, turbo_confirm: "Tu confirmes?"}, class: 'btn btn-outline-success me-4 mb-2'%>
                 </div>
               </div>
             </div>
